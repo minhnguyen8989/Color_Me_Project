@@ -53,10 +53,10 @@
     const leftArrow = 37;
     const rightArrow = 39;
 
-    $(document).keydown(function (event){
+    let movingObject = document.getElementById('movingObject');
+    const stepSize = 10; // Number of pixels to move on each key press
 
-        let movingObject = document.getElementById('movingObject');
-        const stepSize = 10; // Number of pixels to move on each key press
+    $(document).keydown(function (event){
 
         userInput = event.keyCode;
 
@@ -65,26 +65,21 @@
                         let currentPositionDown = parseInt($(movingObject).css('margin-top'));
                         let newPositionDown = currentPositionDown + stepSize;
                         $(movingObject).css('margin-top', newPositionDown + "px")
-                    console.log("down");
                     break;
                 case upArrow:
                         let currentPositionUp = parseInt($(movingObject).css('margin-top'));
                         let newPositionUp = currentPositionUp - stepSize;
                         $(movingObject).css('margin-top', newPositionUp + "px")
-                    console.log("up");
                     break;
                 case rightArrow:
                         let currentPositionRight = parseInt($(movingObject).css('margin-left'));
                         let newPositionRight = currentPositionRight + stepSize;
                         $(movingObject).css('margin-left', newPositionRight + "px")
-
-                    console.log("right");
                     break;
                 case leftArrow:
                         let currentPositionLeft = parseInt($(movingObject).css('margin-left'));
                         let newPositionLeft = currentPositionLeft - stepSize;
                         $(movingObject).css('margin-left', newPositionLeft + "px")
-                    console.log("left");
                     break;
             }
 
@@ -127,26 +122,126 @@
 
     });
 
-    // let upButton = document.getElementById('upBtn');
-    // let rightButton = document.getElementById('rightBtn');
-    // let downButton = document.getElementById('downBtn');
-    // let LeftButton = document.getElementById('leftBtn');
-    // if ()
-    //
-    //
-    // $('#upBtn').hover(function () {
-    //     console.log("up");
-    // });
-    // $('#rightBtn').hover(function () {
-    //     console.log("right");
-    // });
-    // $('#downBtn').hover(function () {
-    //     console.log("down");
-    // });
-    // $('#leftBtn').hover(function () {
-    //     console.log("left");
-    // });
 
+// Mobile Version keys function
+    const colorBlueVerticalPosition = 5;
+    const colorBlueHorizontalPosition = 0;
+
+    const colorRedVerticalPosition = -55;
+    const colorRedHorizontalPosition = 200;
+
+    const colorPinkVerticalPosition = -15;
+    const colorPinkHorizontalPosition = 550;
+
+    const colorYellowVerticalPosition = -75;
+    const colorYellowHorizontalPosition = 350;
+
+    const colorGreenVerticalPosition = -115;
+    const colorGreenHorizontalPosition = 600;
+
+
+    $('#upBtn').click(function () {
+        let currentPositionUp = parseInt($(movingObject).css('margin-top'));
+        let newPositionUp = currentPositionUp - stepSize;
+        $(movingObject).css('margin-top', newPositionUp + "px")
+
+        let currentMainObjectVerticalPosition1 = parseInt($(movingObject).css('margin-top'));
+        let currentMainObjectHorizontalPosition1 = parseInt($(movingObject).css('margin-left'));
+
+        if (currentMainObjectVerticalPosition1 === colorBlueVerticalPosition && currentMainObjectHorizontalPosition1 === colorBlueHorizontalPosition) {
+            $(movingObject).css('color', '#3475e5');
+            $('footer').css('background-color', '#3475e5');
+        } else if (currentMainObjectVerticalPosition1 === colorRedVerticalPosition && currentMainObjectHorizontalPosition1 === colorRedHorizontalPosition) {
+            $(movingObject).css('color', '#db3344');
+            $('footer').css('background-color', '#db3344');
+        } else if (currentMainObjectVerticalPosition1 === colorPinkVerticalPosition && currentMainObjectHorizontalPosition1 === colorPinkHorizontalPosition){
+            $(movingObject).css('color', '#d30ee1');
+            $('footer').css('background-color', '#d30ee1');
+        } else if (currentMainObjectVerticalPosition1 === colorYellowVerticalPosition && currentMainObjectHorizontalPosition1 === colorYellowHorizontalPosition) {
+            $(movingObject).css('color', '#d3e10e');
+            $('footer').css('background-color', '#d3e10e');
+        } else if (currentMainObjectVerticalPosition1 === colorGreenVerticalPosition && currentMainObjectHorizontalPosition1 === colorGreenHorizontalPosition) {
+            $(movingObject).css('color', '#0ee155');
+            $('footer').css('background-color', '#0ee155');
+        }
+
+
+    });
+    $('#rightBtn').click(function () {
+        let currentPositionRight = parseInt($(movingObject).css('margin-left'));
+        let newPositionRight = currentPositionRight + stepSize;
+        $(movingObject).css('margin-left', newPositionRight + "px")
+
+        let currentMainObjectVerticalPosition1 = parseInt($(movingObject).css('margin-top'));
+        let currentMainObjectHorizontalPosition1 = parseInt($(movingObject).css('margin-left'));
+
+        if (currentMainObjectVerticalPosition1 === colorBlueVerticalPosition && currentMainObjectHorizontalPosition1 === colorBlueHorizontalPosition) {
+            $(movingObject).css('color', '#3475e5');
+            $('footer').css('background-color', '#3475e5');
+        } else if (currentMainObjectVerticalPosition1 === colorRedVerticalPosition && currentMainObjectHorizontalPosition1 === colorRedHorizontalPosition) {
+            $(movingObject).css('color', '#db3344');
+            $('footer').css('background-color', '#db3344');
+        } else if (currentMainObjectVerticalPosition1 === colorPinkVerticalPosition && currentMainObjectHorizontalPosition1 === colorPinkHorizontalPosition){
+            $(movingObject).css('color', '#d30ee1');
+            $('footer').css('background-color', '#d30ee1');
+        } else if (currentMainObjectVerticalPosition1 === colorYellowVerticalPosition && currentMainObjectHorizontalPosition1 === colorYellowHorizontalPosition) {
+            $(movingObject).css('color', '#d3e10e');
+            $('footer').css('background-color', '#d3e10e');
+        } else if (currentMainObjectVerticalPosition1 === colorGreenVerticalPosition && currentMainObjectHorizontalPosition1 === colorGreenHorizontalPosition) {
+            $(movingObject).css('color', '#0ee155');
+            $('footer').css('background-color', '#0ee155');
+        }
+    });
+    $('#downBtn').click(function () {
+        let currentPositionDown = parseInt($(movingObject).css('margin-top'));
+        let newPositionDown = currentPositionDown + stepSize;
+        $(movingObject).css('margin-top', newPositionDown + "px")
+
+        let currentMainObjectVerticalPosition1 = parseInt($(movingObject).css('margin-top'));
+        let currentMainObjectHorizontalPosition1 = parseInt($(movingObject).css('margin-left'));
+
+        if (currentMainObjectVerticalPosition1 === colorBlueVerticalPosition && currentMainObjectHorizontalPosition1 === colorBlueHorizontalPosition) {
+            $(movingObject).css('color', '#3475e5');
+            $('footer').css('background-color', '#3475e5');
+        } else if (currentMainObjectVerticalPosition1 === colorRedVerticalPosition && currentMainObjectHorizontalPosition1 === colorRedHorizontalPosition) {
+            $(movingObject).css('color', '#db3344');
+            $('footer').css('background-color', '#db3344');
+        } else if (currentMainObjectVerticalPosition1 === colorPinkVerticalPosition && currentMainObjectHorizontalPosition1 === colorPinkHorizontalPosition){
+            $(movingObject).css('color', '#d30ee1');
+            $('footer').css('background-color', '#d30ee1');
+        } else if (currentMainObjectVerticalPosition1 === colorYellowVerticalPosition && currentMainObjectHorizontalPosition1 === colorYellowHorizontalPosition) {
+            $(movingObject).css('color', '#d3e10e');
+            $('footer').css('background-color', '#d3e10e');
+        } else if (currentMainObjectVerticalPosition1 === colorGreenVerticalPosition && currentMainObjectHorizontalPosition1 === colorGreenHorizontalPosition) {
+            $(movingObject).css('color', '#0ee155');
+            $('footer').css('background-color', '#0ee155');
+        }
+    });
+    $('#leftBtn').click(function () {
+        let currentPositionLeft = parseInt($(movingObject).css('margin-left'));
+        let newPositionLeft = currentPositionLeft - stepSize;
+        $(movingObject).css('margin-left', newPositionLeft + "px")
+
+        let currentMainObjectVerticalPosition1 = parseInt($(movingObject).css('margin-top'));
+        let currentMainObjectHorizontalPosition1 = parseInt($(movingObject).css('margin-left'));
+
+        if (currentMainObjectVerticalPosition1 === colorBlueVerticalPosition && currentMainObjectHorizontalPosition1 === colorBlueHorizontalPosition) {
+            $(movingObject).css('color', '#3475e5');
+            $('footer').css('background-color', '#3475e5');
+        } else if (currentMainObjectVerticalPosition1 === colorRedVerticalPosition && currentMainObjectHorizontalPosition1 === colorRedHorizontalPosition) {
+            $(movingObject).css('color', '#db3344');
+            $('footer').css('background-color', '#db3344');
+        } else if (currentMainObjectVerticalPosition1 === colorPinkVerticalPosition && currentMainObjectHorizontalPosition1 === colorPinkHorizontalPosition){
+            $(movingObject).css('color', '#d30ee1');
+            $('footer').css('background-color', '#d30ee1');
+        } else if (currentMainObjectVerticalPosition1 === colorYellowVerticalPosition && currentMainObjectHorizontalPosition1 === colorYellowHorizontalPosition) {
+            $(movingObject).css('color', '#d3e10e');
+            $('footer').css('background-color', '#d3e10e');
+        } else if (currentMainObjectVerticalPosition1 === colorGreenVerticalPosition && currentMainObjectHorizontalPosition1 === colorGreenHorizontalPosition) {
+            $(movingObject).css('color', '#0ee155');
+            $('footer').css('background-color', '#0ee155');
+        }
+    });
 
 
 </script>
