@@ -5,6 +5,13 @@ body {
     line-height: 1.7;
 }
 
+#movingObject {
+    position: absolute;
+    z-index: 99999999;
+    margin-top:  -45px;
+    margin-left: 619px;
+}
+
 .header {
     height: 40vh;
     background-image:
@@ -17,7 +24,8 @@ body {
     background-position: top;
     position: relative;
 
-    clip-path: polygon(0 0, 100% 0, 100% 30vh, 0 100%);
+    /*Use this tool for clip-path https://bennettfeely.com/clippy/ */
+    clip-path: polygon(100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
     color: #000000;
 }
 
