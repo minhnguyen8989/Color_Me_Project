@@ -25,7 +25,7 @@ body {
     position: relative;
 
     /*Use this tool for clip-path https://bennettfeely.com/clippy/ */
-    clip-path: polygon(100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
+    clip-path: polygon(100% 0, 100% 75%, 50% 100%, 0 75%, 0 0);
     color: #000000;
 }
 
@@ -35,8 +35,7 @@ body {
 }
 
 #colorPink {
-    margin-top: 200px;
-    margin-left: 150px;
+    margin-left: 550px;
 }
 
 #colorGreen {
@@ -45,8 +44,30 @@ body {
 }
 
 #colorYellow {
-    margin-top: 200px;
     margin-left: 350px;
+}
+
+#buttonPad {
+    border: 1px solid red;
+    display: flex;
+}
+
+#upBtn {
+    margin-top: 200px;
+    margin-left: 300px;
+}
+
+#leftBtn {
+    margin-left: -220px;
+    margin-top: -250px;
+}
+
+#rightBtn {
+    margin-left: 430px;
+}
+
+#downBtn {
+    margin-left: 300px;
 }
 
 footer {
@@ -119,4 +140,19 @@ footer {
     background-color: #fff;
     color: #777;
     font-size: 19px;
+}
+
+@media (min-width: 1001px) {
+    #upBtn {
+        display: none;
+    }
+    #rightBtn {
+        display: none;
+    }
+    #downBtn {
+        display: none;
+    }
+    #leftBtn {
+        display: none;
+    }
 }
